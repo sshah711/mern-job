@@ -5,9 +5,8 @@ const Hom = () => {
   const [query, setQuery] = useState("");
         const handleInputChange = (event) => {
         setQuery(event.target.value)
-        //console.log(event.target.value)
     }
-
+     console.log(query)
   return (
   <Banne query={query} handleInputChange={handleInputChange} />
   )
