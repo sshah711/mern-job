@@ -8,7 +8,7 @@ const Hom = () => {
     }
      console.log(query)
   return (
-  <Banne query={query} handleInputChange={handleInputChange} />
+  <Banner query={query} handleInputChange={handleInputChange} />
   )
 }
 
