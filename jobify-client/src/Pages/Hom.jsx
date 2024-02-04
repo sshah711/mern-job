@@ -4,6 +4,7 @@ import { data } from 'autoprefixer';
 import Card from '../components/Card';
 import Jobs from './Jobs';
 import Sidebar from '../sidebar/Sidebar';
+import News from '../components/News';
 
 const Hom = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -136,7 +137,9 @@ const Hom = () => {
 
         </div>
         {/* right side*/}
-        <div className='bg-white p-4 rounded'>Right</div>
+        <div className='bg-white p-4 rounded'>
+          <News/>
+        </div>
 
       </div>
     </div>
