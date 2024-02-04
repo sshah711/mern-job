@@ -82,6 +82,7 @@ const Hom = () => {
         jobLocation.toLowerCase() === selected.toLowerCase() ||
         parseInt(maxPrice) <= parseInt(selected) ||
         postingDate >= selected ||
+        experienceLevel.toLowerCase() === selected.toLowerCase() ||
         salaryType.toLowerCase() === selected.toLowerCase() ||
         employmentType.toLowerCase() === selected.toLowerCase() 
         
