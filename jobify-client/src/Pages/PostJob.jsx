@@ -5,13 +5,29 @@ const PostJob = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const {
         register,
-        handleSubmit,
+        handleSubmit,reset,
         formState: { errors },
     } = useForm()
 
     const onSubmit = (data) => {
         data.skills = selectedOption;
-        console.log(data);
+          //console.log(data);
+
+        fetch('http://localhost:8000/post-job', {
+            method: "POST",
+            headers: {'content-type' : 'application/json'},
+            body: JSON.stringify(data)
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                if(result.acknowledged === true){
+                    alert("Job Posted Successfully!!!!")
+                }
+                reset()
+            });
+
+
     };
 
     const options = [
@@ -29,7 +45,7 @@ const PostJob = () => {
         { value: 'Python', label: 'Python' },
         { value: 'MySQL', label: 'MySQL' }
 
-    ]
+    ];
 
     return (
         <div className='max-w-screen-2xl container mx-auto xl:px-24 px-4'>PostJob
@@ -153,9 +169,9 @@ const PostJob = () => {
                     <div className="w-full">
                         <label className="block mb-2 text-lg" > Job Posted By </label>
                         <input type="email" placeholder="Email is..."
-                                {...register("postedBy")} className="create-job-input" />
-                        
-                        </div>
+                            {...register("postedBy")} className="create-job-input" />
+
+                    </div>
                     <input type="submit" className="block mt-12 bg-blue text-white font-semibold px-8 py-2 rounded-sm cursor-pointer" />
                 </form>
             </div>

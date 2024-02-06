@@ -15,7 +15,10 @@ const Hom = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("jobs.json").then(res => res.json()).then(data => {
+    //fetch("jobs.json")
+    fetch("http://localhost:8000/all-jobs")
+    .then(res => res.json())
+    .then(data => {
       setJobs(data)
       setIsLoading(false)
     })
