@@ -13,7 +13,7 @@ app.use(cors())
 //sshah38008 
 //7Maninagar 44NMgozuGWV1xELM
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = process.env.DATABASE;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -62,7 +62,13 @@ async function run() {
          res.send(jobs);
     } )
 
-
+    //delete a job
+    app.delete("/job/:id", async(req,res) => {
+       const id = req.params.id;
+       const filter = {_id: new ObjectId(id)}
+       const result = await jobsCollections.deleteOne(filter);
+       res.send(result);
+    } )
 
 
     // Send a ping to confirm a successful connection

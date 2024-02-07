@@ -33,7 +33,8 @@ const Hom = () => {
 
   //filter jobs by title
 
-  const filteredItems = jobs.filter((job) => job.jobTitle.toLowerCase().indexOf(query.toLocaleLowerCase()) !== -1)
+  const filteredItems = jobs.filter(
+    (job) => job.jobTitle.toLowerCase().indexOf(query.toLocaleLowerCase()) !== -1)
   //console.log(filteredItems)
 
   //radio based filtering

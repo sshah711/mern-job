@@ -14,6 +14,7 @@ const router = createBrowserRouter([
             {path: "/", element: <Hom /> },
             {path: "/post-job", element: <PostJob /> },
             {path: "/my-job", element: <MyJobs /> },
+            {path: "/my-job", element: <MyJobs /> },
         ]
     },
 ]);
