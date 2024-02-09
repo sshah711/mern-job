@@ -4,7 +4,7 @@ import {FiCalendar, FiClock, FiMapPin} from "react-icons/fi"
 //import {FaRupeeSign} from "react-icons/fa"
 import {MdCurrencyRupee} from "react-icons/md"
 const Card = ({data}) => {
-    const {companyName, jobTitle, companyLogo, minPrice, maxPrice, salaryType, jobLocation, employmentType, postingDate, description} = data;
+    const {_id, companyName, jobTitle, companyLogo, minPrice, maxPrice, salaryType, jobLocation, employmentType, postingDate, description} = data;
   return (
     // <div>
     //     <h3>
@@ -13,7 +13,7 @@ const Card = ({data}) => {
     // </div>
 
     <section className='card'>
-        <Link to={"/"} className='flex gap-4 flex-col sm:flex-row items-start'>
+        <Link to={`/job/${_id}`} className='flex gap-4 flex-col sm:flex-row items-start'>
         <img src={companyLogo} alt=''/>
         <div>
             <h4 className='text-primary mb-1'> {companyName} </h4>
